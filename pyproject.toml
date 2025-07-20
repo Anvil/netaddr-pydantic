@@ -1,0 +1,84 @@
+[build-system]
+requires = ["poetry-core>=2.1.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "netaddr-pydantic"
+version = "0.0.1"
+description = ""
+readme = "README.md"
+requires-python = ">=3.11"
+license = "LGPL-2.1-or-later"
+keywords = ["retry", "decorator", "asyncio"]
+authors = [
+    {name = "Damien Nadé", email= "anvil.github+netaddr-pydantic@livna.org"}
+]
+packages = ["netaddr_pydantic"]
+classifiers = [
+    "Framework :: Pydantic :: 2",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development",
+    "Typing :: Typed"
+]
+
+[project.urls]
+Repository = "https://github.com/Anvil/netaddr-pydantic/"
+Issues = "https://github.com/Anvil/netaddr-pydantic/issues"
+Documentation = "https://netaddr-pydantic.readthedocs.io/en/latest/"
+
+[tool.poetry.dependencies]
+pydantic = ">=2.11"
+pydantic-core = ">=2.33"
+netaddr = ">=1.3.0"
+types-netaddr = ">=1.3.0"
+
+[tool.poetry.group.unit]
+optional = true
+
+[tool.poetry.group.unit.dependencies]
+pytest = ">6"
+pytest-mock = "^3.10"
+pytest-cases = "^3.6"
+pytest-cov = ">=4"
+
+[tool.poetry.group.sphinx]
+optional = true
+
+[tool.poetry.group.sphinx.dependencies]
+sphinx = ">=8.2"
+sphinx-autodoc-typehints = ">=3.1"
+sphinx-rtd-theme = ">=3"
+
+[tool.mypy]
+color_output = true
+ignore_missing_imports = false
+pretty = true
+raise_exceptions = true
+show_column_numbers = true
+show_error_codes = true
+show_error_context = true
+show_error_end = true
+show_traceback = true
+strict = true
+warn_unused_configs = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+disallow_untyped_decorators = true
+packages = ["netaddr_pydantic", "tests"]
+plugins = ["pydantic.mypy"]
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-vv -l --cov-branch --cov-report term-missing --cov netaddr_pydantic"
