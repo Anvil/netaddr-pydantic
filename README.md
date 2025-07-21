@@ -1,5 +1,9 @@
 # netaddr-pydantic
 
+[![Pylint Static Quality Github Action](https://github.com/Anvil/netaddr-pydantic/actions/workflows/pylint.yml/badge.svg)](https://github.com/Anvil/netaddr-pydantic/actions/workflows/pylint.yml)
+[![Mypy Static Quality Github Action](https://github.com/Anvil/netaddr-pydantic/actions/workflows/mypy.yml/badge.svg)](https://github.com/Anvil/netaddr-pydantic/actions/workflows/mypy.yml)
+[![Pylint Static Quality Github Action](https://github.com/Anvil/netaddr-pydantic/actions/workflows/python-app.yml/badge.svg)](https://github.com/Anvil/netaddr-pydantic/actions/workflows/python-app.yml)
+
 Use [Netaddr](https://pypi.org/project/netaddr/) objects in [Pydantic](https://docs.pydantic.dev/latest/) Models
 
 
