@@ -13,7 +13,7 @@ from pydantic import PlainSerializer, PlainValidator, Tag, Discriminator
 from pydantic_core import PydanticCustomError
 
 
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 
 
 IPAddress = Annotated[
