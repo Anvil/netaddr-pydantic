@@ -30,7 +30,7 @@ classifiers = [
 [project.urls]
 Repository = "https://github.com/Anvil/netaddr-pydantic/"
 Issues = "https://github.com/Anvil/netaddr-pydantic/issues"
-Documentation = "https://netaddr-pydantic.readthedocs.io/en/latest/"
+Documentation = "https://github.com/Anvil/netaddr-pydantic/README.md"
 
 
 [tool.poetry.dependencies]
