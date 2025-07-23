@@ -17,6 +17,13 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 ### Breaks
 
 
+## 0.2.0 - (2025-07-23)
+---
+
+### New
+* Add IPv4Address/IPv4Network and their v6 counterparts
+
+
 ## 0.1.2 - (2025-07-23)
 ---
 
