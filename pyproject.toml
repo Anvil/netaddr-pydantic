@@ -9,6 +9,7 @@ description = "Use Netaddr objects in Pydantic Models"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "LGPL-2.1-or-later"
+license-files = ["LICENSE"]
 keywords = ["pydantic", "netaddr"]
 authors = [
     {name = "Damien Nadé", email= "anvil.github+netaddr-pydantic@livna.org"}
