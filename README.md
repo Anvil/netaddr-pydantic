@@ -25,7 +25,6 @@ import pydantic
 class Model(pydantic.BaseModel):
     address: pydantic.IPvAnyAddress
 
-
 m = Model(address="1.2.3.4")
 print(type(m.address))
 print(m.model_dump_json())
@@ -131,6 +130,8 @@ The validation relies mostly on `netaddr` objects constructors. There's currentl
 
 ### Additionnal features
 
+## IPAny
+
 That may not be much, but an `IPAny` type is available. `pydantic` should produce the most acccurate object depending of the source object. An `IPAny` field will produce
 
 * an `IPSet` if provided type is `list`, `tuple` or `set` 
@@ -138,3 +139,87 @@ That may not be much, but an `IPAny` type is available. `pydantic` should produc
 * an `IPRange` if value is an `str` containing a `-` character
 * an `IPGlob` if value is an `str` containing a `*` char.
 * an `IPAddress` in other cases.
+
+## `IPv4Address` / `IPv6Address`
+
+In case you want to match only IPv4 or IPv6 addresses (although, for portability, I suggest you don't), you can use these Internet Protocol version specific types annotations.
+
+For instance, the following code:
+
+```python
+import pydantic
+import netaddr_pydantic
+
+class Model(pydantic.BaseModel):
+    address: netaddr_pydantic.IPv4Address
+
+m4 = Model(address="1.2.3.4")
+print(f"IPv4 has been validated: {m4.address}")
+
+try:
+    m6 = Model(address="dead:b00b:cafe::1")
+except pydantic.ValidationError:
+    print("IPv6 address did not pass:")
+    raise
+```
+
+Produces the following:
+
+```
+IPv4 has been validated: 1.2.3.4
+IPv6 address did not pass:
+Traceback (most recent call last):
+  File "t.py", line 11, in <module>
+    m6 = Model(address="dead:b00b:cafe::1")
+  File "/env/lib/python3.13/site-packages/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Model
+address
+  Value error, base address 'dead:b00b:cafe::1' is not IPv4 [type=value_error, input_value='dead:b00b:cafe::1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/value_error
+```
+
+## `IPv4Network` / `IPv6Network`
+
+Well, duh. :unamused:
+
+```python
+import pydantic
+import netaddr_pydantic
+
+class Model(pydantic.BaseModel):
+    network: netaddr_pydantic.IPv6Network
+
+m6 = Model(network="dead:b00b:cafe::/64")
+print(f"IPv6 CIDR has been validated: {m6.network}")
+
+try:
+    m4 = Model(network="1.2.3.0/24")
+except pydantic.ValidationError:
+    print("IPv4 CIDR did not pass:")
+    raise
+```
+
+:interrobang:
+
+:expressionless:
+
+```
+IPv6 CIDR has been validated: dead:b00b:cafe::/64
+IPv4 CIDR did not pass:
+Traceback (most recent call last):
+  File "t.py", line 11, in <module>
+    m4 = Model(network="1.2.3.0/24")
+  File "/env/lib/python3.13/site-packages/pydantic/main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Model
+network
+  Value error, base address '1.2.3.0' is not IPv6 [type=value_error, input_value='1.2.3.0/24', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.11/v/value_error
+```
+
+:boom: :bangbang:
+
+:tada:
+
+:smirk:
