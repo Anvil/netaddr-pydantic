@@ -3,7 +3,6 @@
 [![PyPI version](https://img.shields.io/pypi/v/netaddr-pydantic?logo=pypi&style=plastic)](https://pypi.python.org/pypi/netaddr-pydantic/)
 [![Supported Python Version](https://img.shields.io/pypi/pyversions/netaddr-pydantic?logo=python&style=plastic)](https://pypi.python.org/pypi/netaddr-pydantic/)
 [![License](https://img.shields.io/pypi/l/netaddr-pydantic?color=green&logo=GNU&style=plastic)](https://github.com/Anvil/netaddr-pydantic/blob/main/LICENSE)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/netaddr-pydantic?color=magenta&style=plastic)](https://pypistats.org/packages/netaddr-pydantic)
 
 [![Pylint Static Quality Github Action](https://github.com/Anvil/netaddr-pydantic/actions/workflows/pylint.yml/badge.svg)](https://github.com/Anvil/netaddr-pydantic/actions/workflows/pylint.yml)
 [![Mypy Static Quality Github Action](https://github.com/Anvil/netaddr-pydantic/actions/workflows/mypy.yml/badge.svg)](https://github.com/Anvil/netaddr-pydantic/actions/workflows/mypy.yml)
