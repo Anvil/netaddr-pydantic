@@ -16,7 +16,7 @@ from .friends import (
     ipany_discriminator,
 )
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 
 IPAddress = Annotated[
