@@ -17,6 +17,13 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 ### Breaks
 
 
+## 0.2.3 - (2026-06-04)
+---
+
+### Changes
+* add official python 3.14 support
+
+
 ## 0.2.2 - (2026-06-04)
 ---
 
