@@ -36,6 +36,8 @@ def ipv(
 
 def iprange_validator(value: Any) -> netaddr.IPRange:
     """Allow strings and some kinds of tuple/list to be used as IPRange"""
+    if isinstance(value, netaddr.IPRange):
+        return value
     if isinstance(value, (tuple, list)) and len(value) == 2:
         return netaddr.IPRange(*value)
     if isinstance(value, str):
