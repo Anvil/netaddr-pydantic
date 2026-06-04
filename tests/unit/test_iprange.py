@@ -14,8 +14,8 @@ from .conftest import GenericModel, CreateAddressFixture
 
 @pytest.mark.parametrize(
     "func",
-    (str, lambda iprange: (iprange.first, iprange.last)),
-    ids=("str", "tuple[int, int]"),
+    (str, lambda x: x, lambda iprange: (iprange.first, iprange.last)),
+    ids=("str", "IPRange", "tuple[int, int]"),
 )
 def test_iprange(
     func: Callable[[netaddr.IPRange], IPRange],
