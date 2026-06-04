@@ -13,9 +13,15 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 ### Changes
 
 ### Fixes
-* accept netaddr.IPRange as valid input for IPRange
 
 ### Breaks
+
+
+## 0.2.2 - (2026-06-04)
+---
+
+### Fixes
+* accept netaddr.IPRange as valid input for IPRange
 
 
 ## 0.2.1 - (2025-07-23)
