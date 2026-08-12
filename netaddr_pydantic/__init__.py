@@ -20,7 +20,7 @@ __version__ = "0.2.3"
 
 
 IPAddress = Annotated[
-    netaddr.IPAddress, PlainValidator(netaddr.IPAddress), PlainSerializer(str)
+    netaddr.IPAddress, ipv(None, netaddr.IPAddress), PlainSerializer(str)
 ]
 
 IPv4Address = Annotated[
@@ -32,7 +32,7 @@ IPv6Address = Annotated[
 ]
 
 IPNetwork = Annotated[
-    netaddr.IPNetwork, PlainValidator(netaddr.IPNetwork), PlainSerializer(str)
+    netaddr.IPNetwork, ipv(None, netaddr.IPNetwork), PlainSerializer(str)
 ]
 
 IPv4Network = Annotated[
@@ -42,7 +42,6 @@ IPv4Network = Annotated[
 IPv6Network = Annotated[
     netaddr.IPNetwork, ipv(6, netaddr.IPNetwork), PlainSerializer(str)
 ]
-
 
 IPGlob = Annotated[
     netaddr.IPGlob, PlainValidator(netaddr.IPGlob), PlainSerializer(str)
