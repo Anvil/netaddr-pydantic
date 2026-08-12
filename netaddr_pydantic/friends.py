@@ -16,7 +16,7 @@ ReturnT = TypeVar("ReturnT")
 
 
 def ipv(
-    version: Literal[4, 6], func: Callable[..., ReturnT]
+    version: Literal[4, 6, None], func: Callable[..., ReturnT]
 ) -> PlainValidator:
     """Decorate to automatically insert the named ``version`` parameter
     function to given specific value in function calls. And also to correctly
