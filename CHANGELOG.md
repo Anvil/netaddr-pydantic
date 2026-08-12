@@ -9,10 +9,12 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 ---
 
 ### New
+* validate IPAddress|IPRange|IPNetwork unions behaviour
 
 ### Changes
 
 ### Fixes
+* respect pydantic ValueError validation contract validations for IPNetwork/IPAddress
 
 ### Breaks
 
