@@ -11,12 +11,20 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 ### New
 
 ### Changes
+
+### Fixes
+
+### Breaks
+
+
+## 0.3.1 - (2026-08-12)
+---
+
+### Changes
 * remove py3.10 github workflows
 
 ### Fixes
 * fix pytest dependencies
-
-### Breaks
 
 
 ## 0.3.0 - (2026-08-12)
